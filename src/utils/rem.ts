@@ -13,3 +13,5 @@ setRem();
 window.onresize = function () {
   setRem();
 };
+
+export {}

@@ -24,17 +24,31 @@ const __APP_INFO__ = {
   process.env.VUE_APP_RELEASE_VERSION = `${process.env.VUE_APP_RELEASE_VERSION}_${dateTime}`;
 })();
 
+
 export default ({ command, mode }: ConfigEnv): UserConfig => {
   const root = process.cwd();
 
   const env = loadEnv(mode, root);
-  console.log('env :>> ', env, command, mode);
 
   const viteEnv = wrapperEnv(env);
 
   const { VITE_PORT, VITE_PUBLIC_PATH, VITE_PROXY, VITE_DROP_CONSOLE } = viteEnv;
 
   const isBuild = command === 'build';
+
+  // 获取多页面配置信息
+  const buildConf = createBuild({
+    outDir: OUTPUT_DIR
+  })
+
+
+  const plugins = createVitePlugins({
+    pages: buildConf.pages,
+    viteEnv,
+    isBuild
+  })
+
+  console.log('plugins :>> ', plugins);
 
   return {
     base: VITE_PUBLIC_PATH,
@@ -68,7 +82,7 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
     esbuild: {
       pure: VITE_DROP_CONSOLE ? ['console.log', 'debugger'] : [],
     },
-    build: createBuild(OUTPUT_DIR),
+    build: buildConf.build,
     define: {
       // setting vue-i18-next
       // Suppress warning
@@ -76,7 +90,7 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
       __APP_INFO__: JSON.stringify(__APP_INFO__),
     },
     // The vite plugin used by the project. The quantity is large, so it is separately extracted and managed
-    plugins: createVitePlugins(viteEnv, isBuild),
+    plugins: plugins,
 
     optimizeDeps: {
       // @iconify/iconify: The dependency is dynamically and virtually loaded by @purge-icons/generated, so it needs to be specified explicitly
