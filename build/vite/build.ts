@@ -14,7 +14,7 @@ type buildInfo = {
 }
 
 export type pageInfo = {
-  input: string,
+  entry: string,
   template: string,
   filename: string,
   // chunks: string[]
@@ -31,27 +31,27 @@ glob.sync(filter).forEach(pathItem => {
     filename = 'index.html';
   }
   const page: pageInfo = {
-    input: pathItem,
+    entry: pathItem,
     template: `./src/modules/${chunk}/page/index.html`,
     filename,
     // chunks: ['chunk-vendors', 'chunk-common', 'runtime', chunk],
   }
 
-  inputOptin[chunk] = path.resolve(process.cwd(), page.input)
+  inputOptin[chunk] = path.resolve(process.cwd(), page.entry)
 
   pagesObj[chunk] = page;
 })
 
-const rollupOptions: RollupOptions = {
-  // output: {
-  //   entryFileNames: 'entry-[name]-[hash].js',
-  // }
-}
-
-rollupOptions.input = inputOptin
-
 
 export function createBuild(conf: createBuildConf): buildInfo {
+  const rollupOptions: RollupOptions = {
+    output: {
+      dir: conf.outDir,
+      entryFileNames: 'entry-[name]-[hash].js',
+    }
+  }
+  
+  rollupOptions.input = inputOptin
   return {
     build: {
       target: 'es2015',

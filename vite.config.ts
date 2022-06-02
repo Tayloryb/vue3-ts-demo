@@ -48,8 +48,6 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
     isBuild
   })
 
-  console.log('plugins :>> ', plugins);
-
   return {
     base: VITE_PUBLIC_PATH,
     root,

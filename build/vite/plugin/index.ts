@@ -29,13 +29,14 @@ export function createVitePlugins(para: pluginPara) {
   // 是否使用mock
   VITE_USE_MOCK && vitePlugins.push(configMockPlugin(para.isBuild));
 
-  console.log('para :>> ', para);
   // vite-plugin-html
   vitePlugins.push(configHtmlPlugin({
     env: viteEnv,
     isBuild,
     pages,
   }));
+
+  console.log('vitePlugins :>> ', vitePlugins);
 
   return vitePlugins
 }
