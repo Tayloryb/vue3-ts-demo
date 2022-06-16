@@ -3,5 +3,5 @@
  */
  export const GLOB_CONFIG_FILE_NAME = 'index.js';
 
- export const OUTPUT_DIR = 'dist';
+ export const OUTPUT_DIR = '../../dist';
  

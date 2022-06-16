@@ -24,31 +24,41 @@ const pagesObj: pageObjMap = {};
 const filter = './src/modules/**/main.ts';
 const inputOptin: InputOption = {}
 
+// const homePage = {
+//   entry: './src/main.ts',
+//   template: './src/index.html',
+//   filename: 'index.html'
+// }
+// inputOptin['home'] = path.resolve(process.cwd(), homePage.template)
+// pagesObj['home'] = homePage
+
 glob.sync(filter).forEach(pathItem => {
-  const chunk: string = pathItem.split('./src/modules/')[1].split('/main.ts')[0];
-  let filename = `${chunk}/index.html`;
-  if (chunk === 'index') {
-    filename = 'index.html';
+  let chunk: string = pathItem.split('./src/modules/')[1].split('/main.ts')[0];
+  let template = `./src/modules/${chunk}/index.html`
+  // 入口页面
+  if (chunk === 'main.ts') {
+    chunk = 'home';
+    template = './src/modules/index.html'
   }
+  let filename = `${chunk}/index.html`;
   const page: pageInfo = {
     entry: pathItem,
-    template: `./src/modules/${chunk}/page/index.html`,
+    template,
     filename,
     // chunks: ['chunk-vendors', 'chunk-common', 'runtime', chunk],
   }
 
-  inputOptin[chunk] = path.resolve(process.cwd(), page.entry)
+  inputOptin[chunk] = path.resolve(process.cwd(), page.template)
 
   pagesObj[chunk] = page;
 })
 
-
 export function createBuild(conf: createBuildConf): buildInfo {
   const rollupOptions: RollupOptions = {
-    output: {
-      dir: conf.outDir,
-      entryFileNames: 'entry-[name]-[hash].js',
-    }
+    // output: {
+    //   dir: conf.outDir,
+    //   entryFileNames: 'entry-[name]-[hash].js',
+    // }
   }
   
   rollupOptions.input = inputOptin

@@ -30,11 +30,11 @@ export function createVitePlugins(para: pluginPara) {
   VITE_USE_MOCK && vitePlugins.push(configMockPlugin(para.isBuild));
 
   // vite-plugin-html
-  vitePlugins.push(configHtmlPlugin({
-    env: viteEnv,
-    isBuild,
-    pages,
-  }));
+  // vitePlugins.push(configHtmlPlugin({
+  //   env: viteEnv,
+  //   isBuild,
+  //   pages,
+  // }));
 
   console.log('vitePlugins :>> ', vitePlugins);
 

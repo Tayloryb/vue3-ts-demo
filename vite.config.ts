@@ -2,6 +2,7 @@ import type { UserConfig, ConfigEnv } from 'vite';
 import { loadEnv } from 'vite';
 import dayjs from 'dayjs'
 import pkg from './package.json';
+import path from 'path';
 import { resolve } from 'path';
 import { wrapperEnv, isProdFn } from './build/utils';
 import { createProxy } from './build/vite/proxy';
@@ -28,6 +29,8 @@ const __APP_INFO__ = {
 export default ({ command, mode }: ConfigEnv): UserConfig => {
   const root = process.cwd();
 
+  const htmlRoot = './src/modules'
+
   const env = loadEnv(mode, root);
 
   const viteEnv = wrapperEnv(env);
@@ -50,7 +53,7 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
 
   return {
     base: VITE_PUBLIC_PATH,
-    root,
+    root: htmlRoot,
     resolve: {
       alias: [
         // {
