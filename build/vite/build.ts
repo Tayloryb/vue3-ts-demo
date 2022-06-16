@@ -55,10 +55,11 @@ glob.sync(filter).forEach(pathItem => {
 
 export function createBuild(conf: createBuildConf): buildInfo {
   const rollupOptions: RollupOptions = {
-    // output: {
-    //   dir: conf.outDir,
-    //   entryFileNames: 'entry-[name]-[hash].js',
-    // }
+    output: {
+      chunkFileNames: 'static/js/[name]_[hash].js',
+      entryFileNames: 'static/js/[name]_[hash].js',
+      assetFileNames: 'static/[ext]/[name]_[hash].[ext]'
+    }
   }
   
   rollupOptions.input = inputOptin
@@ -82,6 +83,7 @@ export function createBuild(conf: createBuildConf): buildInfo {
       // Turning off brotliSize display can slightly reduce packaging time
       brotliSize: false,
       chunkSizeWarningLimit: 2000,
+      emptyOutDir: true
     },
     pages: pagesObj
   }
