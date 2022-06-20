@@ -26,23 +26,25 @@ declare global {
       };
       lastBuildTime: string;
     };
-    declare interface BaseResponse<T = any> {
-      code: number;
-      data: T;
-      msg: string;
-      page: {
-        pageNo: number;
-        pageSize: number;
-        pages: number;
-        total: number;
-      };
-    }
+    // declare interface BaseResponse<T = any> {
+    //   code: number;
+    //   data: T;
+    //   msg: string;
+    //   page: {
+    //     pageNo: number;
+    //     pageSize: number;
+    //     pages: number;
+    //     total: number;
+    //   };
+    // }
 
   }
 
   namespace glob {
     glob
   }
+  
+  declare type Nullable<T> = T | null;
 
   declare type Recordable<T = any> = Record<string, T>;
 
