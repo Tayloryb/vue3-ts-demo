@@ -1,8 +1,4 @@
+import vapp from '/@/common/vue.app'
 
-import ext from "/@/common/vue.ext"
-
-const $vApp = {
-  ...ext,
-}
-
-export default $vApp
+window.vApp = vapp
+console.log('vapp :>> ', window.vApp);

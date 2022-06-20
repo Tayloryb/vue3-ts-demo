@@ -1,14 +1,19 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-// import "/@/vue.main"
-import ext from "/@/common/vue.ext"
+import "/@/vue.main"
+import bus from "/@/common/vue.bus"
 
-console.log('ext :>> ', ext.bus);
-
-ext.$bus.$on('test', () => {
-  console.log('test :>> ', 11111111111);
+bus.$on("test", () => {
+  console.log('1111 :>> ', 22222);
 })
 
+bus.getList()
+
+
+import { setUpExt } from "/@/common/vue.ext"
 
 const app = createApp(App)
+// 注册全局工具函数
+setUpExt(app)
 app.mount('#app')
+
