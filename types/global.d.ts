@@ -16,6 +16,7 @@ declare global {
     wx: any;
     AlipayJSBridge: any;
     vApp: any;
+    router: any
   }
   namespace GD {
     const __APP_INFO__: {

@@ -1,11 +1,13 @@
-import { createApp } from 'vue'
-import App from './App.vue'
-// import "/@/vue.main"
-import { setUpExt } from "/@/common/vue.ext"
+// import { createApp } from 'vue'
+// import App from './App.vue'
+import "/@/vue.main"
+// import { setUpExt } from "/@/common/vue.ext"
 
-const app = createApp(App)
+// const app = createApp(App)
 // 注册全局工具函数
-setUpExt(app)
+// setUpExt(app)
+
+window.location.href = "/index/index.html"
 
 
-app.mount('#app')
+// app.mount('#app')
