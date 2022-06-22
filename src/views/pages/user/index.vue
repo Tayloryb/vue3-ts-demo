@@ -5,13 +5,19 @@
 
 <script lang="ts" setup>
 import { useGo } from '/@/hooks/web/usePage';
-import bus from '/@/common/vue.bus'
+import { useUserStoreWithOut } from "/@/store/modules/user"
 
-bus.$on('test', () => {
-  console.log('11111 :>> ', 11111);
+const userStore = useUserStoreWithOut()
+
+console.log('userStore.getToekn :>> ', userStore.getToken, userStore);
+
+userStore.$patch({
+  lastUpdateTime: 111
 })
 
-bus.getList()
+console.log('userStore.getL :>> ', userStore.getLastUpdateTime);
+
+
 const go = useGo()
 
 const handleHome = () => {
