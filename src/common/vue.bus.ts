@@ -1,5 +1,10 @@
+/**
+ * eventBus
+ * @description 事件总线简易实现
+ * @author zyb
+ */
 class Bus {
-  list: { [key: string]: Array<Function> }
+  private list: { [key: string]: Array<Function> }
   constructor() {
     this.list = {}
   }
@@ -17,9 +22,16 @@ class Bus {
     }
   }
 
-  $off(name:string) {
+  $off(name:string, fn?: Function) {
     if (this.list[name]) {
-      delete this.list[name]
+      if (fn) {
+        const idx = this.list[name].findIndex(func => func === fn)
+        if (idx >= 0) {
+          this.list[name].splice(idx, 1)
+        }
+      } else {
+        delete this.list[name]
+      }
     }
   }
 
