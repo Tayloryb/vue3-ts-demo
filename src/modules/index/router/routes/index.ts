@@ -1,5 +1,14 @@
 import type { AppRouteRecordRaw, AppRouteModule } from '/@/router/types';
 
+const LoginRoutes: AppRouteRecordRaw = {
+  path: '/login',
+  name: 'Login',
+  component: () => import('/@/views/pages/login/index.vue'),
+  meta: {
+    title: '登录'
+  }
+}
+
 const UserRoutes: AppRouteRecordRaw = {
   path: '/user',
   name: 'User',
@@ -37,4 +46,5 @@ export const RootRoute: AppRouteRecordRaw = {
 
 export const basicRoutes = [
   RootRoute,
+  LoginRoutes
 ]
