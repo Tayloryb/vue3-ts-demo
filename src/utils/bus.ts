@@ -3,7 +3,7 @@
  * @description 事件总线简易实现
  * @author zyb
  */
-class Bus {
+ class Bus {
   private list: { [key: string]: Array<Function> }
   constructor() {
     this.list = {}

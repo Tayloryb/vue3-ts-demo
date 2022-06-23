@@ -2,7 +2,8 @@ import { PluginOption } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import vueJsx from '@vitejs/plugin-vue-jsx';
 import { configMockPlugin } from './mock';
-import { configHtmlPlugin } from './html';
+import { configAntPlugin } from "./antd"
+// import { configHtmlPlugin } from './html';
 import type { pageObjMap } from "../build"
 
 type pluginPara = {
@@ -29,14 +30,8 @@ export function createVitePlugins(para: pluginPara) {
   // 是否使用mock
   VITE_USE_MOCK && vitePlugins.push(configMockPlugin(para.isBuild));
 
-  // vite-plugin-html
-  // vitePlugins.push(configHtmlPlugin({
-  //   env: viteEnv,
-  //   isBuild,
-  //   pages,
-  // }));
-
-  console.log('vitePlugins :>> ', vitePlugins);
+  // 使用按需导入ant-design-vue
+  vitePlugins.push(configAntPlugin())
 
   return vitePlugins
 }

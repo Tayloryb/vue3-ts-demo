@@ -1,5 +1,6 @@
 <template>
   <div>113333</div>
+  <a href="">1111</a>
   <button @click="handleHome">跳转首页</button>
 </template>
 

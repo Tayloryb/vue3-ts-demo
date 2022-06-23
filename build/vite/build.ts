@@ -53,6 +53,8 @@ glob.sync(filter).forEach(pathItem => {
   pagesObj[chunk] = page;
 })
 
+console.table(pagesObj);
+
 export function createBuild(conf: createBuildConf): buildInfo {
   const rollupOptions: RollupOptions = {
     output: {
