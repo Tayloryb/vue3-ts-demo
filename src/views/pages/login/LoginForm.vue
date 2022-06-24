@@ -23,7 +23,6 @@
 <script lang="ts">
 import { defineComponent, ref } from "vue";
 import type { Rule } from 'ant-design-vue/es/form';
-import { trigger } from "@vue/reactivity";
 
 interface formState {
   username: string,
