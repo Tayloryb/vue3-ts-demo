@@ -3,59 +3,72 @@
   .pd-@{i} {
     padding: @i+0px;
   }
+
   .pd(@i + 2)
 }
 
 .pd(2);
 
 /* 生成padding-top函数 */
-.pt(@i) when (@i<50) {
+.pt(@i) when (@i<=50) {
   .pt-@{i} {
     padding-top: @i+0px;
   }
+
   .pt(@i+2)
 }
+
 .pt(2);
 
 /* 生成padding-bottom */
-.pb(@i) when (@i<50) {
+.pb(@i) when (@i<=50) {
   .pb-@{i} {
     padding-bottom: @i+0px;
   }
+
   .pb(@i+2)
 }
+
 .pb(2);
 
 /* 生成padding-left */
-.pl(@i) when (@i<50) {
+.pl(@i) when (@i<=50) {
   .pl-@{i} {
     padding-left: @i+0px;
   }
+
   .pl(@i+2)
 }
+
 .pl(2);
 
 /* 生成padding-left */
-.pr(@i) when (@i<50) {
+.pr(@i) when (@i<=50) {
   .pr-@{i} {
     padding-right: @i+0px;
   }
+
   .pr(@i+2)
 }
+
 .pr(2);
 
 .no-padding {
   padding: 0;
 }
+
 .no-padding-left {
   padding-left: 0;
 }
+
 .no-padding-right {
   padding-right: 0;
 }
+
 .no-padding-top {
   padding-top: 0;
 }
+
 .no-padding-bottom {
   padding-bottom: 0;
 }
