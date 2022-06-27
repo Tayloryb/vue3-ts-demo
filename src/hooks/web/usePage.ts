@@ -49,5 +49,12 @@ export function useGetPath(_router?: Router) {
       return `${window.location.pathname}`
     }
   }
+
   return getPath
+}
+
+export function getCurrentRoute(_router?: Router) {
+  let router:Router = useRouter();
+  const { currentRoute } =  _router || router;
+  return currentRoute.value
 }

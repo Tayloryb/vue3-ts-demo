@@ -1,6 +1,7 @@
 import type { AppRouteRecordRaw, AppRouteModule } from '/@/router/types';
 
-import UserRoutes from './userRouter';
+import UserRoutes from './userRoutes';
+import HomeRoutes from './homeRoutes'
 
 const LoginRoutes: AppRouteRecordRaw = {
   path: '/login',
@@ -11,14 +12,14 @@ const LoginRoutes: AppRouteRecordRaw = {
   }
 }
 
-const HomeRoutes: AppRouteRecordRaw = {
-  path: 'home',
-  name: 'Home',
-  component: () => import('/@/views/pages/index/index.vue'),
-  meta: {
-    title: 'HomePage'
-  }
-}
+// const HomeRoutes: AppRouteRecordRaw = {
+//   path: 'home',
+//   name: 'Home',
+//   component: () => import('/@/views/pages/index/index.vue'),
+//   meta: {
+//     title: 'HomePage'
+//   }
+// }
 
 export const RootRoute: AppRouteRecordRaw = {
   path: '/',
