@@ -5,45 +5,45 @@ module.exports = defineConfig({
   root: true,
   globals: {
     // vue的setup宏
-    defineProps: "readonly",
-    defineEmits: "readonly",
-    defineExpose: "readonly",
-    withDefaults: "readonly",
+    defineProps: 'readonly',
+    defineEmits: 'readonly',
+    defineExpose: 'readonly',
+    withDefaults: 'readonly'
   },
   env: {
     browser: true,
     node: true,
-    es6: true,
+    es6: true
   },
   extends: [
-    "plugin:vue/vue3-essential",
-    "eslint:recommended",
-    "@vue/typescript/recommended",
-    "@vue/prettier",
+    'plugin:vue/vue3-essential',
+    'eslint:recommended'
+    // "@vue/typescript/recommended",
+    // "@vue/prettier",
     // "plugin:prettier/recommended",
   ],
-  parser: "vue-eslint-parser",
+  parser: 'vue-eslint-parser',
   parserOptions: {
     ecmaVersion: 2020,
-    sourceType: "module",
+    sourceType: 'module',
     ecmaFeatures: {
-      jsx: true,
+      jsx: true
     },
-    parser: "@typescript-eslint/parser",
+    parser: '@typescript-eslint/parser'
   },
   rules: {
     'import/no-unresolved': [
       'off',
       {
-        caseSensitive: true,
-      },
+        caseSensitive: true
+      }
     ],
     'no-continue': 'off',
     'arrow-parens': 'off',
     // 优先使用数组和对象解构
     'prefer-destructuring': 'off',
     // 强制使用一致的换行符风格
-    'linebreak-style': ['error', 'unix'],
+    // 'linebreak-style': ['error', 'unix'],
     //关闭禁止使用空方法
     'no-empty-function': 'error',
     //关闭多空格检查
@@ -66,8 +66,8 @@ module.exports = defineConfig({
     'getter-return': [
       'error',
       {
-        allowImplicit: false,
-      },
+        allowImplicit: false
+      }
     ],
     // 强制在花括号内使用一致的换行符
     // 'object-curly-newline': ['error',
@@ -83,7 +83,7 @@ module.exports = defineConfig({
     // 禁止在 if, for, while 里使用赋值语句，除非这个赋值语句被括号包起来了
     'no-cond-assign': [
       'error',
-      'except-parens',
+      'except-parens'
     ],
     'no-param-reassign': ['error', {
       'props': false
@@ -98,8 +98,8 @@ module.exports = defineConfig({
     'no-constant-condition': [
       'error',
       {
-        checkLoops: false,
-      },
+        checkLoops: false
+      }
     ],
     'max-len': [
       'error', {
@@ -107,8 +107,8 @@ module.exports = defineConfig({
         'ignoreUrls': true,
         'ignoreStrings': true,
         'ignoreTemplateLiterals': true,
-        'ignoreRegExpLiterals': true,
-      },
+        'ignoreRegExpLiterals': true
+      }
     ],
     // 禁止在正则表达式中出现 Ctrl 键的 ASCII 表示，即禁止使用 /\x1f/
     // 开启此规则，因为字符串中一般不会出现 Ctrl 键，所以一旦出现了，可能是一个代码错误
@@ -136,22 +136,22 @@ module.exports = defineConfig({
     'comma-dangle': ['error'],
     // 禁止使用不带 await 表达式的 async 函数
     'require-await': 'error',
-    "@typescript-eslint/no-var-requires": 0,
-    "vue/multi-word-component-names": 0,
-    "prettier/prettier": [
-      "warn",
-      {
-        trailingComma: "es5",
-      },
-    ],
+    '@typescript-eslint/no-var-requires': 0,
+    'vue/multi-word-component-names': 0
+    // 'prettier/prettier': [
+    //   'warn',
+    //   {
+    //     trailingComma: 'es5'
+    //   }
+    // ]
   },
   overrides: [{
     files: [
-      "**/__tests__/*.{j,t}s?(x)",
-      "**/tests/unit/**/*.spec.{j,t}s?(x)",
+      '**/__tests__/*.{j,t}s?(x)',
+      '**/tests/unit/**/*.spec.{j,t}s?(x)'
     ],
     env: {
-      jest: true,
-    },
-  }, ],
+      jest: true
+    }
+  } ]
 })

@@ -4,8 +4,8 @@
   </div>
 </template>
 <script lang="ts">
-import { defineComponent } from "vue";
-import LoginForm from "./LoginForm.vue"
+import { defineComponent } from 'vue';
+import LoginForm from './LoginForm.vue'
 
 export default defineComponent({
   components: {

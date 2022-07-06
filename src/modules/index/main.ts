@@ -1,12 +1,12 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-import "/@/vue.main"
+import '/@/vue.main'
 
 /** store */
-import { setupStore } from "/@/store/index"
+import { setupStore } from '/@/store/index'
 
 /** router */
-import { router } from "./router"
+import { router } from './router'
 import { setupRouter } from '/@/router'
 
 

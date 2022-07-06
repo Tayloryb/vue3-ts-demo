@@ -1,4 +1,4 @@
-import type { AppRouteRecordRaw, AppRouteModule } from '/@/router/types';
+import type { AppRouteRecordRaw } from '/@/router/types';
 const UserRoutes: AppRouteRecordRaw = {
   path: '/user',
   name: 'User',

@@ -8,8 +8,8 @@
 
 <script lang="ts" setup>
 // import { Button, DatePicker } from "ant-design-vue"
-import { useGo } from "/@/hooks/web/usePage";
-import { useUserStoreWithOut } from "/@/store/modules/user"
+import { useGo } from '/@/hooks/web/usePage';
+import { useUserStoreWithOut } from '/@/store/modules/user'
 import { buildUUID } from '/@/utils/uuid'
 
 const userStore = useUserStoreWithOut()

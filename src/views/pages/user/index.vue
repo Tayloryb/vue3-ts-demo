@@ -6,7 +6,7 @@
 
 <script lang="ts" setup>
 import { useGo } from '/@/hooks/web/usePage';
-import { useUserStoreWithOut } from "/@/store/modules/user"
+import { useUserStoreWithOut } from '/@/store/modules/user'
 
 const userStore = useUserStoreWithOut()
 

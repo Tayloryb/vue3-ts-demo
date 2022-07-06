@@ -11,10 +11,10 @@
 </template>
 
 <script lang="ts" setup>
-import { useUserStoreWithOut } from "/@/store/modules/user"
-import LayoutHeader from "./LayoutHeader.vue";
-import LayoutMenu from "./LayoutMenu.vue";
-import LayoutContent from "./LayoutContent.vue";
+import { useUserStoreWithOut } from '/@/store/modules/user'
+import LayoutHeader from './LayoutHeader.vue';
+import LayoutMenu from './LayoutMenu.vue';
+import LayoutContent from './LayoutContent.vue';
 
 const userStore = useUserStoreWithOut()
 

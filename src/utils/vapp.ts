@@ -1,4 +1,4 @@
-import type { App } from "vue"
+import type { App } from 'vue'
 
 class VApp {
   vueInst: App | null = null

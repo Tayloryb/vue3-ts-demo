@@ -1,4 +1,4 @@
-import type { AppRouteRecordRaw } from '/@/router/types';
+// import type { AppRouteRecordRaw } from '/@/router/types';
 // import {
 //   REDIRECT_NAME,
 //   LAYOUT,
@@ -29,3 +29,7 @@ import type { AppRouteRecordRaw } from '/@/router/types';
 //     },
 //   ],
 // };
+
+export {
+  
+}

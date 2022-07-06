@@ -9,8 +9,8 @@
   </div>
 </template>
 <script lang="ts">
-import { defineComponent, ref, watch, onMounted } from "vue";
-import { getCurrentRoute, useGo } from "/@/hooks/web/usePage";
+import { defineComponent, ref, watch, onMounted } from 'vue';
+import { getCurrentRoute, useGo } from '/@/hooks/web/usePage';
 
 interface Menu {
   name: string,
@@ -28,7 +28,7 @@ export default defineComponent({
     /**菜单 */
     const menuList: Menu[] = [
       {
-        name: "test1",
+        name: 'test1',
         id: 1,
         children: [],
         link: '/home/'

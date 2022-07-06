@@ -21,7 +21,7 @@
   </div>
 </template>
 <script lang="ts">
-import { defineComponent, ref } from "vue";
+import { defineComponent, ref } from 'vue';
 import type { Rule } from 'ant-design-vue/es/form';
 
 interface formState {
@@ -38,7 +38,7 @@ export default defineComponent({
       {
         username: '',
         password: '',
-        remember: false,
+        remember: false
       }
     )
     const validatePass = async (_rule: Rule, value: string) => {
@@ -66,7 +66,7 @@ export default defineComponent({
       formState,
       formRules,
       onFinish,
-      onFinishFailed,
+      onFinishFailed
     }
   }
 })

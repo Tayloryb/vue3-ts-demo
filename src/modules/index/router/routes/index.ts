@@ -1,4 +1,4 @@
-import type { AppRouteRecordRaw, AppRouteModule } from '/@/router/types';
+import type { AppRouteRecordRaw } from '/@/router/types';
 
 import UserRoutes from './userRoutes';
 import HomeRoutes from './homeRoutes'
@@ -27,7 +27,7 @@ export const RootRoute: AppRouteRecordRaw = {
   redirect: '/home',
   component: () => import('/@/views/layout/basiclayout/BasicLayout.vue'),
   meta: {
-    title: 'Root',
+    title: 'Root'
   },
   children: [
     UserRoutes,
