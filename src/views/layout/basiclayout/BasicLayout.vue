@@ -18,6 +18,9 @@ import LayoutContent from './LayoutContent.vue';
 
 const userStore = useUserStoreWithOut()
 
+console.log('userStore :>> ', userStore);
+
+
 </script>
 
 <style lang="less" scoped>
