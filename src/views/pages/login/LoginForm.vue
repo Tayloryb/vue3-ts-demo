@@ -21,8 +21,8 @@
   </div>
 </template>
 <script lang="ts">
-import { defineComponent, ref } from 'vue';
-import type { Rule } from 'ant-design-vue/es/form';
+import { defineComponent, ref } from 'vue'
+import type { Rule } from 'ant-design-vue/es/form'
 
 interface formState {
   username: string,
@@ -41,7 +41,7 @@ export default defineComponent({
         remember: false
       }
     )
-    const validatePass = async (_rule: Rule, value: string) => {
+    const validatePass = (_rule: Rule, value: string) => {
       if (!value.length) {
         return Promise.reject('密码不能为空')
       }
@@ -55,12 +55,12 @@ export default defineComponent({
       }]
     }
     const onFinish = (values: any) => {
-      console.log('Success:', values);
-    };
+      console.log('Success:', values)
+    }
 
     const onFinishFailed = (errorInfo: any) => {
-      console.log('Failed:', errorInfo);
-    };
+      console.log('Failed:', errorInfo)
+    }
 
     return {
       formState,

@@ -12,13 +12,13 @@
 
 <script lang="ts" setup>
 import { useUserStoreWithOut } from '/@/store/modules/user'
-import LayoutHeader from './LayoutHeader.vue';
-import LayoutMenu from './LayoutMenu.vue';
-import LayoutContent from './LayoutContent.vue';
+import LayoutHeader from './LayoutHeader.vue'
+import LayoutMenu from './LayoutMenu.vue'
+import LayoutContent from './LayoutContent.vue'
 
 const userStore = useUserStoreWithOut()
 
-console.log('userStore :>> ', userStore);
+console.log('userStore :>> ', userStore)
 
 
 </script>

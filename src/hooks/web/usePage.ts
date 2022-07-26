@@ -1,45 +1,45 @@
-import type { RouteLocationRaw, Router } from 'vue-router';
+import type { RouteLocationRaw, Router } from 'vue-router'
 
-import { isString } from '/@/utils/is';
-import { PageEnum } from '/@/enums/pageEnum';
-import { useRouter } from 'vue-router';
+import { isString } from '/@/utils/is'
+import { PageEnum } from '/@/enums/pageEnum'
+import { useRouter } from 'vue-router'
 
 export type RouteLocationRawEx = Omit<RouteLocationRaw, 'path'> & { path: PageEnum };
 
 function handleError(e: Error) {
-  console.error(e);
+  console.error(e)
 }
 
 // 页面路由跳转
 export function useGo(_router?: Router) {
-  const router: Router = useRouter();
+  const router: Router = useRouter()
   // if (!_router) {
   //   router = useRouter();
   // }
-  const { push, replace } = _router || router;
+  const { push, replace } = _router || router
   function go(opt: PageEnum | RouteLocationRaw | string = PageEnum.BASE_HOME, isReplace = false) {
     if (!opt) {
-      return;
+      return
     }
     if (isString(opt)) {
-      isReplace ? replace(opt).catch(handleError) : push(opt).catch(handleError);
+      isReplace ? replace(opt).catch(handleError) : push(opt).catch(handleError)
     } else {
-      const o = opt as RouteLocationRaw;
-      isReplace ? replace(o).catch(handleError) : push(o).catch(handleError);
+      const o = opt as RouteLocationRaw
+      isReplace ? replace(o).catch(handleError) : push(o).catch(handleError)
     }
   }
-  return go;
+  return go
 }
 
 // 获取路由对应地址
 export function useGetPath(_router?: Router) {
-  const router:Router = useRouter();
+  const router:Router = useRouter()
 
   const { resolve } = _router || router
 
   function getPath(opt: RouteLocationRaw) {
     if (!opt) {
-      return;
+      return
     }
     const pathInfo = resolve(opt) || {}
     if (pathInfo.matched?.length) {
@@ -54,7 +54,7 @@ export function useGetPath(_router?: Router) {
 }
 
 export function getCurrentRoute(_router?: Router) {
-  const router:Router = useRouter();
-  const { currentRoute } =  _router || router;
+  const router:Router = useRouter()
+  const { currentRoute } =  _router || router
   return currentRoute.value
 }

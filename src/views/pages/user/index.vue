@@ -5,18 +5,18 @@
 </template>
 
 <script lang="ts" setup>
-import { useGo } from '/@/hooks/web/usePage';
+import { useGo } from '/@/hooks/web/usePage'
 import { useUserStoreWithOut } from '/@/store/modules/user'
 
 const userStore = useUserStoreWithOut()
 
-console.log('userStore.getToekn :>> ', userStore.getToken, userStore);
+console.log('userStore.getToekn :>> ', userStore.getToken, userStore)
 
 userStore.$patch({
   lastUpdateTime: 111
 })
 
-console.log('userStore.getL :>> ', userStore.getLastUpdateTime);
+console.log('userStore.getL :>> ', userStore.getLastUpdateTime)
 
 
 const go = useGo()

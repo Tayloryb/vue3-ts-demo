@@ -8,7 +8,12 @@ module.exports = defineConfig({
     defineProps: 'readonly',
     defineEmits: 'readonly',
     defineExpose: 'readonly',
-    withDefaults: 'readonly'
+    withDefaults: 'readonly',
+
+    // 全局type 定义
+    Recordable: 'readonly',
+    Nullable: 'readonly',
+    ViteEnv: 'readonly'
   },
   env: {
     browser: true,
@@ -53,7 +58,7 @@ module.exports = defineConfig({
     // 禁止使用var修饰变量
     'no-var': 'error',
     // 关闭禁止使用undefind
-    'no-undefined': 'error',
+    'no-undefined': 'off',
     'prefer-object-spread': 'off',
     //不允许多个空行
     'no-multiple-empty-lines': 'error',
@@ -124,7 +129,7 @@ module.exports = defineConfig({
     // 不允许使用逗号操作符
     'no-sequences': 'error',
     // 关闭语句强制分号结尾
-    // 'semi': [2, 'never'],
+    'semi': [2, 'never'],
     // 要求必须有基数
     'radix': 'error',
     // 禁用与变量同名的标签

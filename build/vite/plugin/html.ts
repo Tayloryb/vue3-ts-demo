@@ -1,7 +1,7 @@
-import type { HtmlTagDescriptor, PluginOption } from 'vite';
-import { createHtmlPlugin } from 'vite-plugin-html';
-import pkg from '../../../package.json';
-import type { pageObjMap, pageInfo } from "../build"
+import type { HtmlTagDescriptor, PluginOption } from 'vite'
+import { createHtmlPlugin } from 'vite-plugin-html'
+import pkg from '../../../package.json'
+import type { pageObjMap, pageInfo } from '../build'
 import path from 'path'
 
 type HtmlPluginPara = {
@@ -27,20 +27,23 @@ type PageOption = {
 
 export function configHtmlPlugin(para: HtmlPluginPara) {
   const { env, isBuild, pages } = para
-  console.log('pages :>> ', pages);
+  console.log('pages :>> ', pages)
 
-  const { VITE_GLOB_APP_TITLE, VITE_PUBLIC_PATH } = env;
-  const basePath = VITE_PUBLIC_PATH.endsWith('/') ? VITE_PUBLIC_PATH : `${VITE_PUBLIC_PATH}/`;
+  const { VITE_GLOB_APP_TITLE, VITE_PUBLIC_PATH } = env
+  const basePath = VITE_PUBLIC_PATH.endsWith('/') ? VITE_PUBLIC_PATH : `${VITE_PUBLIC_PATH}/`
 
   const getScriptSrc = (page: pageInfo) => {
-    return `${basePath || '/'}${page.filename}?v=${pkg.version}-${new Date().getTime()}`;
-  };
+    return `${basePath || '/'}${page.filename}?v=${pkg.version}-${new Date().getTime()}`
+  }
+  console.log('VITE_GLOB_APP_TITLE :>> ', VITE_GLOB_APP_TITLE)
+
 
   const pagesConf = Object.values(pages).map(page => {
+    console.log('getScriptSrc(page) :>> ', getScriptSrc(page))
     const pageOption: PageOption = {
       filename: path.resolve(process.cwd(), page.filename),
       template: path.resolve(process.cwd(), page.template),
-      entry: page.entry,
+      entry: page.entry
       // injectOptions: {
       //   // Inject data into ejs template
       //   data: {
@@ -64,7 +67,7 @@ export function configHtmlPlugin(para: HtmlPluginPara) {
   const htmlPlugin: PluginOption[] = createHtmlPlugin({
     minify: isBuild,
     pages: pagesConf
-  });
+  })
   
   return htmlPlugin
 }

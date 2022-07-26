@@ -2,7 +2,7 @@ import { UserInfo } from '/#/store'
 import { defineStore } from 'pinia'
 
 import { store } from '/@/store'
-import { RoleEnum } from '/@/enums/roleEnum';
+import { RoleEnum } from '/@/enums/roleEnum'
 
 interface UserStore {
   userInfo: Nullable<UserInfo>;

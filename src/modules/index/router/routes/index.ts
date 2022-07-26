@@ -1,6 +1,6 @@
-import type { AppRouteRecordRaw } from '/@/router/types';
+import type { AppRouteRecordRaw } from '/@/router/types'
 
-import UserRoutes from './userRoutes';
+import UserRoutes from './userRoutes'
 import HomeRoutes from './homeRoutes'
 
 const LoginRoutes: AppRouteRecordRaw = {
@@ -33,7 +33,7 @@ export const RootRoute: AppRouteRecordRaw = {
     UserRoutes,
     HomeRoutes
   ]
-};
+}
 
 
 export const basicRoutes = [

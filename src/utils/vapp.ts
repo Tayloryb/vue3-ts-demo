@@ -4,7 +4,7 @@ class VApp {
   vueInst: App | null = null
   serverUrl: App | null = null
   constructor() {
-
+    console.log('111 :>> ', 111)
   }
 
   static init(): VApp {

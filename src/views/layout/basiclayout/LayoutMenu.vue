@@ -9,8 +9,8 @@
   </div>
 </template>
 <script lang="ts">
-import { defineComponent, ref, watch, onMounted } from 'vue';
-import { getCurrentRoute, useGo } from '/@/hooks/web/usePage';
+import { defineComponent, ref, watch, onMounted } from 'vue'
+import { getCurrentRoute, useGo } from '/@/hooks/web/usePage'
 
 interface Menu {
   name: string,
@@ -45,22 +45,22 @@ export default defineComponent({
       menuList.push(menu)
     }
 
-    const openKeys = ref<string[]>([]);
-    const selectedKeys = ref<string[]>([]);
+    const openKeys = ref<string[]>([])
+    const selectedKeys = ref<string[]>([])
 
     watch(selectedKeys, (newVal, oldVal) => {
       console.log(newVal, oldVal)
     })
 
     const changeRoute = (menu: Menu) => {
-      console.log('menu.link :>> ', menu.link);
+      console.log('menu.link :>> ', menu.link)
       go(menu.link)
     }
 
     onMounted(() => {
       const currentRoute = getCurrentRoute()
       menuList.forEach((menu, idx) => {
-        let path = menu.link.split('?')[0];
+        let path = menu.link.split('?')[0]
         if (path.endsWith('/')) {
           path = path.slice(0, -1)
         }
@@ -81,6 +81,8 @@ export default defineComponent({
 </script>
 <style lang="less">
 .layout-menu {
+  // font-family: 'Courier New', Courier, monospace;
+  // height: 200px;
   width: 200px;
 }
 </style>

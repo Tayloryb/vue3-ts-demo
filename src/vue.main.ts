@@ -1,5 +1,5 @@
 import vapp from '/@/utils/vapp'
-import 'ant-design-vue/dist/antd.css';
+import 'ant-design-vue/dist/antd.css'
 
 import '/@/assets/css/index.less'
 
