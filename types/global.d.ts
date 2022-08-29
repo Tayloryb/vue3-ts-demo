@@ -4,10 +4,10 @@ import type {
   VNodeChild,
   ComponentPublicInstance,
   FunctionalComponent,
-  PropType as VuePropType,
-} from 'vue';
+  PropType as VuePropType
+} from 'vue'
 
-import glob from "glob"
+import glob from 'glob'
 
 // => 全局类型声明
 declare global {
@@ -27,25 +27,19 @@ declare global {
         devDependencies: Recordable<string>;
       };
       lastBuildTime: string;
-    };
-    // declare interface BaseResponse<T = any> {
-    //   code: number;
-    //   data: T;
-    //   msg: string;
-    //   page: {
-    //     pageNo: number;
-    //     pageSize: number;
-    //     pages: number;
-    //     total: number;
-    //   };
-    // }
+    }
+    declare interface BaseResponse<T = any> {
+      code: number;
+      data: T;
+      msg: string;
+    }
 
   }
 
   namespace glob {
     glob
   }
-  
+
   declare type Nullable<T> = T | null;
 
   declare type Recordable<T = any> = Record<string, T>;
