@@ -79,7 +79,7 @@ export default defineComponent({
   }
 })
 </script>
-<style lang="less">
+<style lang="scss">
 .layout-menu {
   // font-family: 'Courier New', Courier, monospace;
   // height: 200px;

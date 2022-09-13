@@ -71,7 +71,7 @@ export default defineComponent({
   }
 })
 </script>
-<style lang="less">
+<style lang="scss">
 .login-form {
   padding: 40px;
   background-color: #fff;

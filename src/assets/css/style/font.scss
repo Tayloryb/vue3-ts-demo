@@ -1,0 +1,49 @@
+// /* font-size */
+// .fontSize(@i) when (@i <=32) {
+//   .fs-@{i} {
+//     font-size: @i + 0px;
+//   }
+
+//   .fontSize(@i + 2)
+// }
+
+// .fontSize(10);
+
+// /* font-weight */
+// .fontWeight(@i) when (@i <=700) {
+//   .fw-@{i} {
+//     font-weight: @i + 0;
+//   }
+
+//   .fontWeight(@i + 100)
+// }
+
+// .fontWeight(400);
+
+// /* line-height */
+// .line(@i) when (@i <=50) {
+//   .ln-@{i} {
+//     line-height: @i + 0px;
+//   }
+
+//   .line(@i + 1)
+// }
+
+// .line(10);
+
+.ln-1 {
+  line-height: 1;
+}
+
+/* text-align */
+.text-start {
+  text-align: start;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-end {
+  text-align: end;
+}

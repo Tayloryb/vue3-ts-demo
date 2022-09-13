@@ -1,5 +1,5 @@
 <template>
-  <div class="page-wrap flex flex-column">
+  <div class="page-wrap flex flex-column el-container is-vertical">
     <div class="header flex-shink-0">
       <LayoutHeader></LayoutHeader>
     </div>
@@ -23,9 +23,24 @@ console.log('userStore :>> ', userStore)
 
 </script>
 
-<style lang="less" scoped>
+<style lang="scss" scoped>
 .page-wrap {
   width: 100%;
   height: 100%;
+}
+
+@include b(container) {
+  // display: flex;
+  // flex-direction: row;
+  // flex: 1;
+  // flex-basis: auto;
+  // box-sizing: border-box;
+  // min-width: 0;
+  background-color: #f00;
+
+  @include is(vertical) {
+    // flex-direction: column;
+    background-color: $info;
+  }
 }
 </style>

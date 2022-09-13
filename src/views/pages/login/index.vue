@@ -17,7 +17,7 @@ export default defineComponent({
   }
 })
 </script>
-<style lang="less">
+<style lang="scss">
 .login-page {
   background-color: #f4f8fa;
 }

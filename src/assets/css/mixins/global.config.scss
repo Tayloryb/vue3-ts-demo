@@ -1,0 +1,26 @@
+$namespace: 'el';
+$is-prefix: 'is-';
+
+@mixin b($block) {
+  $B: $namespace + '-'+ $block !global;
+
+  .#{$B} {
+    @content;
+  }
+}
+
+@mixin when($state) {
+  @at-root {
+    &.#{$state} {
+      @content;
+    }
+  }
+}
+
+@mixin is($state) {
+  @at-root {
+    &.#{$is-prefix + $state} {
+      @content;
+    }
+  }
+}

@@ -12,8 +12,8 @@ export default defineComponent({
   }
 })
 </script>
-<style lang="less">
+<style lang="scss">
 .layout-content {
-  height: 9000px;
+  // height: 9000px;
 }
 </style>

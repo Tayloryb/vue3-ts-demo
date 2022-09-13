@@ -69,6 +69,10 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
         {
           find: /\/#\//,
           replacement: pathResolve('types') + '/'
+        },
+        {
+          find: /\/@css\\/,
+          replacement: pathResolve('src/assets/css') + '/'
         }
       ]
     },
@@ -102,6 +106,14 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
         // 'ant-design-vue/es/locale/zh_CN',
         // 'ant-design-vue/es/locale/en_US',
       ]
+    },
+    css: {
+      preprocessorOptions: {
+        scss: {
+          // src\assets\css\index.scss
+          additionalData: '@import "/@/assets/css/index.scss";'
+        }
+      }      
     }
   }
 }

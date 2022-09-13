@@ -12,7 +12,7 @@ export default defineComponent({
   }
 })
 </script>
-<style lang="less">
+<style lang="scss">
 .layout-header {
   height: 56px;
 }

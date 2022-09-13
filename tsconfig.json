@@ -24,7 +24,7 @@
         "types/*"
       ]
     },
-    "types": ["vite/client"],
+    "types": ["vite/client", "jest"],
     "skipLibCheck": true
   },
   "include": [

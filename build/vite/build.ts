@@ -1,5 +1,5 @@
-import { BuildOptions } from "vite"
-import type { RollupOptions, InputOptions, InputOption } from 'rollup'
+import { BuildOptions } from 'vite'
+import type { RollupOptions, InputOption } from 'rollup'
 import * as glob from 'glob'
 import path from 'path'
 
@@ -20,8 +20,8 @@ export type pageInfo = {
   // chunks: string[]
 }
 
-const pagesObj: pageObjMap = {};
-const filter = './src/modules/**/main.ts';
+const pagesObj: pageObjMap = {}
+const filter = './src/modules/**/main.ts'
 const inputOptin: InputOption = {}
 
 // const homePage = {
@@ -33,27 +33,27 @@ const inputOptin: InputOption = {}
 // pagesObj['home'] = homePage
 
 glob.sync(filter).forEach(pathItem => {
-  let chunk: string = pathItem.split('./src/modules/')[1].split('/main.ts')[0];
+  let chunk: string = pathItem.split('./src/modules/')[1].split('/main.ts')[0]
   let template = `./src/modules/${chunk}/index.html`
   // 入口页面
   if (chunk === 'main.ts') {
-    chunk = 'home';
+    chunk = 'home'
     template = './src/modules/index.html'
   }
-  let filename = `${chunk}/index.html`;
+  const filename = `${chunk}/index.html`
   const page: pageInfo = {
     entry: pathItem,
     template,
-    filename,
+    filename
     // chunks: ['chunk-vendors', 'chunk-common', 'runtime', chunk],
   }
 
   inputOptin[chunk] = path.resolve(process.cwd(), page.template)
 
-  pagesObj[chunk] = page;
+  pagesObj[chunk] = page
 })
 
-console.table(pagesObj);
+console.table(pagesObj)
 
 export function createBuild(conf: createBuildConf): buildInfo {
   const rollupOptions: RollupOptions = {
