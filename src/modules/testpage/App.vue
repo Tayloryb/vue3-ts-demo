@@ -23,8 +23,11 @@
       <el-footer>Footer</el-footer>
     </el-container>
   </el-container>
+  <el-button>测试</el-button>
+  111
 </template>
 <script setup lang="ts">
+  import ElButton from '/@/components/button/elbutton.vue'
 </script>
 <style lang="scss" scoped>
 body {

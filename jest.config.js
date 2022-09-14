@@ -35,7 +35,7 @@ module.exports = {
     '!src/**/*.d.ts'
   ],
   coveragePathIgnorePatterns: ['node_modules'], // 排除哪些目录或文件跳过覆盖率信息
-  coverageReporters: ['text'], // 控制台输出覆盖率报告， 值为text 或者 text-summary
+  coverageReporters: ['json', 'html'], // 控制台输出覆盖率报告， 值为text, text-summary, json, html
   // coverageThreshold: { // 最小覆盖率指标（如果所有文件指标小于预设值，则测试失败）
   //   // * 匹配0或者多个字符（不包括目录分割符）
   //   // ? 匹配一个任意字符 （不包括目录分割符）

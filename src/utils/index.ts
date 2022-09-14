@@ -1,5 +1,6 @@
 import type { App, Plugin } from 'vue'
 import { isObject } from './is'
+import { getCurrentInstance,ComponentInternalInstance } from 'vue'
 
 
 export const withInstall = <T>(component: T, alias?: string) => {
@@ -40,4 +41,17 @@ export function deepMerge<T = any>(src: any = {}, target: any = {}): T {
     src[key] = isObject(src[key]) ? deepMerge(src[key], target[key]) : (src[key] = target[key])
   }
   return src
+}
+
+/**
+ * 获取vue上挂在的全局变量
+ * @returns instance global config
+ */
+export function useGlobalConfig(){
+  const instance:ComponentInternalInstance|null =getCurrentInstance()
+  if(!instance){
+    console.log('useGlobalConfig 必须得在setup里面整')
+    return
+  }
+  return instance.appContext.config.globalProperties.$AILEMENTE || {}
 }

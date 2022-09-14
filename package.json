@@ -12,12 +12,12 @@
     "prepare": "husky install",
     "test": "jest",
     "test:coverage": "npx jest --coverage"
-    
   },
   "dependencies": {
     "ant-design-vue": "^3.2.7",
     "axios": "^0.26.1",
     "lodash-es": "^4.17.21",
+    "mitt": "^3.0.0",
     "mockjs": "^1.1.0",
     "nprogress": "^0.2.0",
     "qs": "^6.11.0",
