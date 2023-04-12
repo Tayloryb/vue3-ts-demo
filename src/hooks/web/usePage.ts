@@ -33,7 +33,7 @@ export function useGo(_router?: Router) {
 
 // 获取路由对应地址
 export function useGetPath(_router?: Router) {
-  const router:Router = useRouter()
+  const router: Router = useRouter()
 
   const { resolve } = _router || router
 
@@ -54,7 +54,7 @@ export function useGetPath(_router?: Router) {
 }
 
 export function getCurrentRoute(_router?: Router) {
-  const router:Router = useRouter()
-  const { currentRoute } =  _router || router
+  const router: Router = useRouter()
+  const { currentRoute } = _router || router
   return currentRoute.value
 }
